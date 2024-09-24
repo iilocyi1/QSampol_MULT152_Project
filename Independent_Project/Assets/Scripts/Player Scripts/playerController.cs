@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
     private float lrInput;
     private float udInput;
     private float jumpInput;
+    public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +28,10 @@ public class playerController : MonoBehaviour
         //Holding space makes player constantly jump, find a fix
         //character tips over depending on angle landed
         transform.Translate(Vector3.up * Time.deltaTime * jumpHeight * jumpInput);
+
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
     }
 }
