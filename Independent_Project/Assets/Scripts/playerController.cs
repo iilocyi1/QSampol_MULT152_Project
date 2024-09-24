@@ -24,6 +24,8 @@ public class playerController : MonoBehaviour
         jumpInput = Input.GetAxis("Jump");
         transform.Translate(Vector3.forward* Time.fixedDeltaTime * speed * lrInput);
         transform.Translate(Vector3.right * Time.fixedDeltaTime * speed * udInput);
+        //Holding space makes player constantly jump, find a fix
+        //character tips over depending on angle landed
         transform.Translate(Vector3.up * Time.deltaTime * jumpHeight * jumpInput);
     }
 }
