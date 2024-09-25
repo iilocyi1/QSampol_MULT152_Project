@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1964753781754090259}
   - component: {fileID: 3239893985708765899}
   - component: {fileID: 3084843574337980643}
-  - component: {fileID: -8372294449458388511}
-  m_Layer: 0
+  - component: {fileID: -1615295751694776268}
+  m_Layer: 3
   m_Name: Small size enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8372294449458388511
+--- !u!114 &-1615295751694776268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6280063960122643656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be01efc62ea290429e56fa47fb19e5a, type: 3}
+  m_Script: {fileID: 11500000, guid: d663585823d720741b285f6b6dd1b6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 40

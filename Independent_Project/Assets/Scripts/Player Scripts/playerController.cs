@@ -4,34 +4,68 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public float jumpHeight = 1f;
-    public float speed = 1f;
+    public float jumpHeight = 4f;
+    public float speed = 2.5f;
     private float lrInput;
     private float udInput;
     private float jumpInput;
     public GameObject projectilePrefab;
+    public GameObject katanaSlashPrefab;
+    private bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         lrInput = Input.GetAxis("Horizontal");
-        //changed Input Manager and switched Negative and Positive Buttons 
         udInput = Input.GetAxis("Vertical");
         jumpInput = Input.GetAxis("Jump");
-        transform.Translate(Vector3.forward* Time.fixedDeltaTime * speed * lrInput);
-        transform.Translate(Vector3.right * Time.fixedDeltaTime * speed * udInput);
-        //Holding space makes player constantly jump, find a fix
-        //character tips over depending on angle landed
-        transform.Translate(Vector3.up * Time.deltaTime * jumpHeight * jumpInput);
 
-        if(Input.GetKeyDown(KeyCode.G))
+        // Calculate movement direction
+        Vector3 movementDirection = new Vector3(-udInput, 0, lrInput).normalized;
+
+        // Rotate the character based on movement direction
+        if (movementDirection != Vector3.zero)
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            transform.rotation = Quaternion.LookRotation(movementDirection);
         }
+
+        // Translate the character in the direction it is facing
+        // Player seems to slide upon exiting key press, look for 
+        // ways to make movement more precise
+        Vector3 movement = movementDirection * Time.fixedDeltaTime * speed;
+        transform.Translate(movement, Space.World);
+
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
+
+        // Handle jumping
+        if (isGrounded && jumpInput > 0)
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+        }
+
+        // Instantiate projectile
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log("Projectile fired!");
+            if (movementDirection != Vector3.zero)
+            {
+                Quaternion projectileRotation = Quaternion.LookRotation(movementDirection);
+                Vector3 spawnPosition = transform.position + movementDirection * 1.5f;
+                Instantiate(projectilePrefab, spawnPosition, projectileRotation);
+            }
+            else
+            {
+                Vector3 spawnPosition = transform.position + transform.forward * 1.5f;
+                // If no movement direction, instantiate with player's current rotation
+                Instantiate(projectilePrefab, spawnPosition, transform.rotation);
+            }
+        }
+
     }
 }
