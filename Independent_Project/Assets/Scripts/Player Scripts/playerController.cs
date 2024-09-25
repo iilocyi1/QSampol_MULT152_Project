@@ -10,8 +10,8 @@ public class playerController : MonoBehaviour
     private float udInput;
     private float jumpInput;
     public GameObject projectilePrefab;
-    public GameObject katanaSlashPrefab;
     private bool isGrounded;
+    private bool isBlocking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,15 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (!isBlocking)
+        { 
         lrInput = Input.GetAxis("Horizontal");
         udInput = Input.GetAxis("Vertical");
         jumpInput = Input.GetAxis("Jump");
 
         // Calculate movement direction
+        //.normalized is used to 
         Vector3 movementDirection = new Vector3(-udInput, 0, lrInput).normalized;
 
         // Rotate the character based on movement direction
@@ -49,23 +53,39 @@ public class playerController : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
         }
 
-        // Instantiate projectile
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Debug.Log("Projectile fired!");
-            if (movementDirection != Vector3.zero)
+            // Instantiate projectile
+            if (Input.GetKeyDown(KeyCode.G))
             {
-                Quaternion projectileRotation = Quaternion.LookRotation(movementDirection);
-                Vector3 spawnPosition = transform.position + movementDirection * 1.5f;
-                Instantiate(projectilePrefab, spawnPosition, projectileRotation);
-            }
-            else
-            {
-                Vector3 spawnPosition = transform.position + transform.forward * 1.5f;
-                // If no movement direction, instantiate with player's current rotation
-                Instantiate(projectilePrefab, spawnPosition, transform.rotation);
+                Debug.Log("Projectile fired!");
+                if (movementDirection != Vector3.zero)
+                {
+                    Quaternion projectileRotation = Quaternion.LookRotation(movementDirection);
+                    Vector3 spawnPosition = transform.position + movementDirection * 1.5f;
+                    Instantiate(projectilePrefab, spawnPosition, projectileRotation);
+                }
+                else
+                {
+                    Vector3 spawnPosition = transform.position + transform.forward * 1.5f;
+                    // If no movement direction, instantiate with player's current rotation
+                    Instantiate(projectilePrefab, spawnPosition, transform.rotation);
+                }
             }
         }
 
+
+    }
+
+    public void SetBlockingState(bool blocking)
+    {
+        isBlocking = blocking;
+        
+        if (blocking)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = 2.5f;
+        }
     }
 }
