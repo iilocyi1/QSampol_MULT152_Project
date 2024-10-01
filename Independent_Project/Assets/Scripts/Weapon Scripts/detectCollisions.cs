@@ -10,7 +10,7 @@ public class detectCollisions : MonoBehaviour
     {
         Debug.Log("Collision detected with " + other.name);
         // Check if the other object has an Enemy component
-        Enemy enemy = other.GetComponent<Enemy>();
+        adaptiveAI enemy = other.GetComponent<adaptiveAI>();
         if (enemy != null)
         {
             Debug.Log("Enemy hit!");

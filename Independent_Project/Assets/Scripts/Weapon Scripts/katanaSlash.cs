@@ -11,7 +11,8 @@ public class katanaSlash : MonoBehaviour
     public Light attackFlashLight;
     public float flashDuration = 1f;
     private blockMechanic blockMechanic;
-
+    public float attackCooldown = 0.75f; // Cooldown duration in seconds
+    private bool canAttack = true; // Flag to check if attack is allowed
 
     public void Start()
     {
@@ -21,7 +22,7 @@ public class katanaSlash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && !blockMechanic.IsBlocking())
+        if (Input.GetKeyDown(KeyCode.F) && canAttack && !blockMechanic.IsBlocking())
         {
             Slash();
         }
@@ -30,17 +31,17 @@ public class katanaSlash : MonoBehaviour
     void Slash()
     {
         StartCoroutine(FlashLight());
+        StartCoroutine(AttackCooldown());
+
         // Detect enemies in range of the attack
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
         // Damage them
         foreach (Collider enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            enemy.GetComponent<adaptiveAI>().TakeDamage(attackDamage);
             Debug.Log("Slash attack hit!");
         }
-
-        
     }
 
     IEnumerator FlashLight()
@@ -48,6 +49,13 @@ public class katanaSlash : MonoBehaviour
         attackFlashLight.enabled = true;
         yield return new WaitForSeconds(flashDuration);
         attackFlashLight.enabled = false;
+    }
+
+    IEnumerator AttackCooldown()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
     }
 
     void OnDrawGizmosSelected()
