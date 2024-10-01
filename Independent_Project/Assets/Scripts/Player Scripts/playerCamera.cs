@@ -17,4 +17,9 @@ public class playerCamera : MonoBehaviour
     {
         transform.position = player.transform.position + new Vector3(4,6,1);
     }
+
+    public void SetActive(bool isActive)
+    {
+        gameObject.SetActive(isActive);
+    }
 }

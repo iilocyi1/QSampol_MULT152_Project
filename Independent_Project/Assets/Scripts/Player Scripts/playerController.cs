@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public float jumpHeight = 4f;
-    public float speed = 2.5f;
+    public float jumpHeight = 2.5f;
+    public float speed = 2.0f;
     private float lrInput;
     private float udInput;
     private float jumpInput;
