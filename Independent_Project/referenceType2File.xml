@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTypeDate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeDate>
+    <guid>b35af50245758734cb53ec98542395ff</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/AssetCollector.cs</fileName>
+    <timeStamp>2024-10-15T02:04:36-07:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>364dfedbebfc7a141aa319fd4b7a9fe5</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/AssetReferenceCollection.cs</fileName>
+    <timeStamp>2024-10-15T02:04:36-07:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>0c81357bd05c48b49803023cae032a79</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/ClassReferenceCollection.cs</fileName>
+    <timeStamp>2024-10-15T02:04:36-07:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>a172fa577b4bef845af8ebc650f6ed70</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/CollectionData.cs</fileName>
+    <timeStamp>2024-10-15T02:04:36-07:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>c3419b7e0a8d70046ab0721868e3f792</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/FindUnusedAssetsWindow.cs</fileName>
+    <timeStamp>2024-10-15T02:04:36-07:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>925cdf6b153b0f54c958cc8255c4aab7</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/ShaderReferenceCollection.cs</fileName>
+    <timeStamp>2024-10-15T02:04:36-07:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>6e59ee5be5400a344abdfe69ce9aa543</guid>
+    <fileName>Assets/Scripts/AreaTriggers/BossCamera.cs</fileName>
+    <timeStamp>2024-10-13T20:57:01-07:00</timeStamp>
+    <typeFullName>
+      <string>BossCamera</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9be10d1f1ada41942b6aa0a230dbb171</guid>
+    <fileName>Assets/Scripts/AreaTriggers/BridgeCamera.cs</fileName>
+    <timeStamp>2024-09-27T00:35:48-07:00</timeStamp>
+    <typeFullName>
+      <string>BridgeCamera</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ee5a6c2991f36234e954992d2bf9ae68</guid>
+    <fileName>Assets/Scripts/AreaTriggers/GameManager.cs</fileName>
+    <timeStamp>2024-10-14T09:52:51-07:00</timeStamp>
+    <typeFullName>
+      <string>GameManager</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>631c6b51085248d4d8cd946b6e685aaf</guid>
+    <fileName>Assets/Scripts/AreaTriggers/Gate.cs</fileName>
+    <timeStamp>2024-10-09T15:50:36-07:00</timeStamp>
+    <typeFullName>
+      <string>Gate</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>241a141e36b2942489ea417f94259a33</guid>
+    <fileName>Assets/Scripts/AreaTriggers/Key.cs</fileName>
+    <timeStamp>2024-10-09T14:44:32-07:00</timeStamp>
+    <typeFullName>
+      <string>Key</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>b2053091a7d28f24b9572d60119f95b3</guid>
+    <fileName>Assets/Scripts/AreaTriggers/NPCDialogue.cs</fileName>
+    <timeStamp>2024-10-09T15:47:52-07:00</timeStamp>
+    <typeFullName>
+      <string>NPCDialogue</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>54640b1f294173e4fa54fedc623eda0c</guid>
+    <fileName>Assets/Scripts/AreaTriggers/WaterDeath.cs</fileName>
+    <timeStamp>2024-10-14T09:36:19-07:00</timeStamp>
+    <typeFullName>
+      <string>WaterDeath</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>a0976c8a1b0cd2e49b6a6d5fd5e057d5</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/adaptiveAI.cs</fileName>
+    <timeStamp>2024-10-08T22:43:33-07:00</timeStamp>
+    <typeFullName>
+      <string>adaptiveAI</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>841f1f31db5c3404896ff09e61592a69</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/adaptiveAISmallEnemy.cs</fileName>
+    <timeStamp>2024-10-15T01:56:04-07:00</timeStamp>
+    <typeFullName>
+      <string>adaptiveAISmallEnemy</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9531e076d74a08d41a769ffc5c5f86c7</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/EnemyDamagePlayer.cs</fileName>
+    <timeStamp>2024-10-09T17:08:04-07:00</timeStamp>
+    <typeFullName>
+      <string>EnemyDamagePlayer</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0cec9a544ad8e24418bbc53d01c140ac</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/IDamageable.cs</fileName>
+    <timeStamp>2024-10-09T16:58:04-07:00</timeStamp>
+    <typeFullName>
+      <string>IDamageable</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>cd1dd7c7c1a1c6d488dc2c8a35ecf612</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/LargeEnemy.cs</fileName>
+    <timeStamp>2024-10-14T12:00:33-07:00</timeStamp>
+    <typeFullName>
+      <string>LargeEnemy</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3c3905c0245c3cf4cb578db5ddbc0481</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/MiniBoss.cs</fileName>
+    <timeStamp>2024-10-15T01:23:05-07:00</timeStamp>
+    <typeFullName>
+      <string>MiniBoss</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bfffe4d460738cc44a1340aa12113157</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/MiniBossAI.cs</fileName>
+    <timeStamp>2024-10-13T21:51:11-07:00</timeStamp>
+    <typeFullName>
+      <string>MiniBossAI</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>58f6334ed7fdb1748b5435c5c1559967</guid>
+    <fileName>Assets/Scripts/Enemy Scripts/SmallEnemy.cs</fileName>
+    <timeStamp>2024-10-15T01:39:58-07:00</timeStamp>
+    <typeFullName>
+      <string>SmallEnemy</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>dc4c46ab8e1ddf14291aa527917fc43e</guid>
+    <fileName>Assets/Scripts/EnemySpawns/SpawnManager.cs</fileName>
+    <timeStamp>2024-10-15T01:25:54-07:00</timeStamp>
+    <typeFullName>
+      <string>SpawnManager</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>33bb750a4e1c792478af4979514d5f74</guid>
+    <fileName>Assets/Scripts/Player Scripts/blockMechanic.cs</fileName>
+    <timeStamp>2024-09-25T12:20:31-07:00</timeStamp>
+    <typeFullName>
+      <string>blockMechanic</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>636112fdca8b0fb49b00f2b15ccdd365</guid>
+    <fileName>Assets/Scripts/Player Scripts/CombinedCamera.cs</fileName>
+    <timeStamp>2024-10-09T17:50:13-07:00</timeStamp>
+    <typeFullName>
+      <string>CombinedCamera</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>68e1f45f35064c249a03b5313dff37f9</guid>
+    <fileName>Assets/Scripts/Player Scripts/Player.cs</fileName>
+    <timeStamp>2024-10-14T09:43:27-07:00</timeStamp>
+    <typeFullName>
+      <string>Player</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>478d5628aa990f743a733d25c48ddb68</guid>
+    <fileName>Assets/Scripts/Player Scripts/playerCamera.cs</fileName>
+    <timeStamp>2024-09-27T00:33:36-07:00</timeStamp>
+    <typeFullName>
+      <string>playerCamera</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>49f144c3c53b8ef42a1dcfb608e1bf29</guid>
+    <fileName>Assets/Scripts/Player Scripts/playerController.cs</fileName>
+    <timeStamp>2024-10-15T01:16:22-07:00</timeStamp>
+    <typeFullName>
+      <string>playerController</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c5a5efee466171a499ad81e4f373b944</guid>
+    <fileName>Assets/Scripts/Player Scripts/PlayerInventory.cs</fileName>
+    <timeStamp>2024-10-09T14:42:33-07:00</timeStamp>
+    <typeFullName>
+      <string>PlayerInventory</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fc2af8c9c260f824ca7644e1b92ebc63</guid>
+    <fileName>Assets/Scripts/Player Scripts/Roll.cs</fileName>
+    <timeStamp>2024-10-08T11:47:38-07:00</timeStamp>
+    <typeFullName>
+      <string>Roll</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>15f10f5d370399f4eaea2f6d0b2cf0d3</guid>
+    <fileName>Assets/Scripts/Weapon Scripts/destroyOutOfBounds.cs</fileName>
+    <timeStamp>2024-09-24T07:37:27-07:00</timeStamp>
+    <typeFullName>
+      <string>destroyOutOfBounds</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9be01efc62ea290429e56fa47fb19e5a</guid>
+    <fileName>Assets/Scripts/Weapon Scripts/detectCollisions.cs</fileName>
+    <timeStamp>2024-10-09T17:07:48-07:00</timeStamp>
+    <typeFullName>
+      <string>detectCollisions</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>740a1989d1158c54584635d3ff35919f</guid>
+    <fileName>Assets/Scripts/Weapon Scripts/katanaSlash.cs</fileName>
+    <timeStamp>2024-10-08T22:44:17-07:00</timeStamp>
+    <typeFullName>
+      <string>katanaSlash</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>172bb4aa5adcea845b2cfc134be5557c</guid>
+    <fileName>Assets/Scripts/Weapon Scripts/ThrowingKnives.cs</fileName>
+    <timeStamp>2024-10-15T01:16:06-07:00</timeStamp>
+    <typeFullName>
+      <string>ThrowingKnives</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fcf7219bab7fe46a1ad266029b2fee19</guid>
+    <fileName>Assets/TutorialInfo/Scripts/Readme.cs</fileName>
+    <timeStamp>2021-03-12T18:26:27-08:00</timeStamp>
+    <typeFullName>
+      <string>Readme</string>
+      <string>Readme+Section</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0d2f50a8e0bb841a5aaa90ae55db8849</guid>
+    <fileName>Assets/Environment/Water (Basic)/Scripts/WaterBasic.cs</fileName>
+    <timeStamp>2017-10-25T05:19:10-07:00</timeStamp>
+    <typeFullName>
+      <string>UnityStandardAssets.Water.WaterBasic</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>dfbe97460f8acd1488a82178305cdf59</guid>
+    <fileName>Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs</fileName>
+    <timeStamp>2021-03-12T18:26:27-08:00</timeStamp>
+    <typeFullName>
+      <string>WaterReflection</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>476cc7d7cd9874016adc216baab94a0a</guid>
+    <fileName>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs</fileName>
+    <timeStamp>2021-03-12T18:26:23-08:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+</ArrayOfTypeDate>
