@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6166818874631617128}
   - component: {fileID: 229087416984108631}
   - component: {fileID: -3953826023241464431}
-  - component: {fileID: -5866532368313393351}
+  - component: {fileID: 2330778095389644653}
   m_Layer: 0
   m_Name: Shuriken Enemy
   m_TagString: Untagged
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f10f5d370399f4eaea2f6d0b2cf0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5866532368313393351
+--- !u!114 &2330778095389644653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8303578829309359098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be01efc62ea290429e56fa47fb19e5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9531e076d74a08d41a769ffc5c5f86c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 10

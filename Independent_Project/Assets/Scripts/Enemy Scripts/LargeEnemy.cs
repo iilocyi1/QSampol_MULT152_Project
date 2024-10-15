@@ -1,31 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class LargeEnemy : adaptiveAI
+public class LargeEnemy : MonoBehaviour, IDamageable
 {
+    public float maxHealth = 100f;
+    private float currentHealth;
     public float attackRange = 1f;
     public int attackDamage = 20;
     public Transform attackPoint;
     public LayerMask playerLayer;
     public Light attackFlashLight;
-    public float flashDuration = 1f;
-    public float attackCooldown = 1.5f;
+    public float flashDuration = .75f;
+    public float attackCooldown = 2.5f; // Updated cooldown duration
     private bool canAttack = true;
+    private NavMeshAgent agent;
+    private Transform player;
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
-        maxHealth = 100f; // Set specific health for large enemy
-        detectionRange = 4f; // Set specific detection range for large enemy
+        currentHealth = maxHealth;
+        agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    protected override void OnPlayerDetected()
+    void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= attackRange && canAttack)
+        if (distanceToPlayer <= 12f)
         {
-            StartCoroutine(MeleeAttack());
+            agent.SetDestination(player.position);
+            if (distanceToPlayer <= attackRange && canAttack)
+            {
+                StartCoroutine(MeleeAttack());
+            }
         }
     }
 
@@ -40,6 +49,7 @@ public class LargeEnemy : adaptiveAI
             player.GetComponent<Player>().TakeDamage(attackDamage);
             Debug.Log("Melee attack hit!");
         }
+
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
@@ -49,6 +59,22 @@ public class LargeEnemy : adaptiveAI
         attackFlashLight.enabled = true;
         yield return new WaitForSeconds(flashDuration);
         attackFlashLight.enabled = false;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log($"LargeEnemy health: {currentHealth}/{maxHealth}");
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("LargeEnemy died!");
+        gameObject.SetActive(false);
     }
 
     void OnDrawGizmosSelected()

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class adaptiveAI : MonoBehaviour
+public class adaptiveAI : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100;
     private float currentHealth;
     public float detectionRange = 6f;
     public float damage = 10f;
     public Transform player;
-    private NavMeshAgent agent;
+    protected NavMeshAgent agent; // Changed to protected
 
     protected virtual void Start()
     {
@@ -20,7 +20,7 @@ public class adaptiveAI : MonoBehaviour
         StartCoroutine(AdaptDifficulty());
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (agent.isOnNavMesh)
         {

@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
     private float zPosRange = 18;
-    int Amount = 15;
+    int Amount = 8;
 
     void Start()
     {

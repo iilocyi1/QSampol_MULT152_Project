@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public float jumpHeight = 2.0f;
+    public float jumpHeight = 10.0f;
+    public float gravityModifier = 1.0f;
     public float speed = 2.0f;
     private float lrInput;
     private float udInput;
-    private float jumpInput;
+    private bool jumpInput;
     public GameObject projectilePrefab;
-    private bool isGrounded;
+    public Transform knifeSpawnPoint; // Transform for the knife spawn point
+    private bool isGrounded = true;
     private bool isBlocking = false;
     private Rigidbody rb;
     public float fallMultiplier = 2.5f; // Multiplier to increase fall speed
     private int projectileCount = 0; // Counter for projectiles fired
     private bool canFire = true; // Flag to check if firing is allowed
     public float fireCooldown = 2.5f; // Cooldown duration in seconds
+    private PlayerInventory inventory;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Physics.gravity *= gravityModifier;
+        inventory = GetComponent<PlayerInventory>();
     }
 
     // Update is called once per frame
@@ -31,7 +36,7 @@ public class playerController : MonoBehaviour
         {
             lrInput = Input.GetAxis("Horizontal");
             udInput = Input.GetAxis("Vertical");
-            jumpInput = Input.GetAxis("Jump");
+            jumpInput = Input.GetKeyDown(KeyCode.Space);
 
             // Calculate movement direction
             Vector3 movementDirection = new Vector3(-udInput, 0, lrInput).normalized;
@@ -49,9 +54,10 @@ public class playerController : MonoBehaviour
             isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
 
             // Handle jumping
-            if (isGrounded && jumpInput > 0)
+            if (isGrounded && jumpInput)
             {
-                rb.velocity = new Vector3(rb.velocity.x, Mathf.Sqrt(2 * jumpHeight * Physics.gravity.magnitude), rb.velocity.z);
+                rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+                isGrounded = false;
             }
 
             // Apply fall multiplier for quicker fall
@@ -64,17 +70,9 @@ public class playerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G) && canFire)
             {
                 Debug.Log("Projectile fired!");
-                if (movementDirection != Vector3.zero)
-                {
-                    Quaternion projectileRotation = Quaternion.LookRotation(movementDirection);
-                    Vector3 spawnPosition = transform.position + movementDirection * 1.5f;
-                    Instantiate(projectilePrefab, spawnPosition, projectileRotation);
-                }
-                else
-                {
-                    Vector3 spawnPosition = transform.position + transform.forward * 1.5f;
-                    Instantiate(projectilePrefab, spawnPosition, transform.rotation);
-                }
+                Vector3 spawnPosition = knifeSpawnPoint.position;
+                Quaternion spawnRotation = knifeSpawnPoint.rotation;
+                Instantiate(projectilePrefab, spawnPosition, spawnRotation);
 
                 projectileCount++;
 
@@ -83,6 +81,12 @@ public class playerController : MonoBehaviour
                     StartCoroutine(FireCooldown());
                 }
             }
+        }
+
+        // Check for interaction input
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Interact();
         }
     }
 
@@ -105,6 +109,31 @@ public class playerController : MonoBehaviour
         else
         {
             speed = 2.0f;
+        }
+    }
+
+    private void Interact()
+    {
+        // Interact with NPCs, pick up items, and use keys
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f))
+        {
+            if (hit.collider.CompareTag("NPC"))
+            {
+                Debug.Log("You have interacted with NPC");
+                hit.collider.GetComponent<NPCDialogue>().Interact();
+            }
+            else if (hit.collider.CompareTag("Key"))
+            {
+                hit.collider.GetComponent<Key>().PickUp();
+            }
+            else if (hit.collider.CompareTag("Gate"))
+            {
+                if (inventory.UseKey())
+                {
+                    hit.collider.GetComponent<Gate>().OpenGate();
+                }
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class katanaSlash : MonoBehaviour
 {
     public float attackRange = 1f;
-    public int attackDamage = 10;
+    public int attackDamage = 50;
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public Light attackFlashLight;
@@ -39,8 +39,15 @@ public class katanaSlash : MonoBehaviour
         // Damage them
         foreach (Collider enemy in hitEnemies)
         {
-            enemy.GetComponent<adaptiveAI>().TakeDamage(attackDamage);
-            Debug.Log("Slash attack hit!");
+            if (enemy.CompareTag("Enemy"))
+            {
+                IDamageable damageable = enemy.GetComponent<IDamageable>();
+                if (damageable != null)
+                {
+                    damageable.TakeDamage(attackDamage);
+                    Debug.Log("Slash attack hit!");
+                }
+            }
         }
     }
 

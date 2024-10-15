@@ -8,19 +8,16 @@ public class detectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected with " + other.name);
-        // Check if the other object has an Enemy component
-        adaptiveAI enemy = other.GetComponent<adaptiveAI>();
-        if (enemy != null)
+        if (other.CompareTag("Enemy"))
         {
             Debug.Log("Enemy hit!");
-            // Apply damage to the enemy
-            enemy.TakeDamage(attackDamage);
+            // Apply damage to the enemy using the IDamageable interface
+            IDamageable damageable = other.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(attackDamage);
+            }
         }
-
-        Destroy(gameObject);
-
 
     }
 }
-
